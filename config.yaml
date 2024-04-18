@@ -1,0 +1,33 @@
+#############################################
+# CONFIGURATIONS FOR THE TRAINING PROCESS #
+#############################################
+
+OPTIMIZER_CONF: 'single' # 'SINGLE' OR 'MULTI'
+ENCODER_TYPE: 'ours' # 'OURS' OR 'SWIN'
+NUM_EPOCHS: 350
+LR: 1e-3
+WEIGHT_DECAY: 5e-6
+DICE_WEIGHT: 5
+NUM_QUERIES: 20 
+UNFREEZE_RATIO: 10
+CONS_UNFREEZE: FALSE
+FULL_UNFREEZE: FALSE
+UNFREEZE_INTERVAL: 10
+
+ID2LABEL: {0: 'Stenosis'}
+LABEL2ID: {'Stenosis': 0}
+
+IMG_SIZE:  224
+BATCH_SIZE: 40
+
+#################################################
+# CONFIGURATIONS FOR THE FASTERVIT ARCHITECTURE #
+#################################################
+
+DIM: 64
+IN_DIM: 64
+DEPTHS: [3,3,8,5] 
+WINDOW_SIZE: [7,7,7,7] 
+CT_SIZE: 2 
+MLP_RATIO: 4 
+NUM_HEADS: [2,4,8,16]
