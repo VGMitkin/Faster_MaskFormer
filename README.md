@@ -36,7 +36,7 @@ Create conda enviromnent
 
 ```
 conda create -n fastermaskformer python=3.9
-conda activate flash
+conda activate fastermaskformer
 pip install -r requirements.txt
 ```
 
