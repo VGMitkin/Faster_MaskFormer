@@ -119,19 +119,17 @@ def train(model,
 
             # Backward propagation
             loss = outputs.loss
-            weightened_loss = loss['loss_dict']['loss_cross_entropy'] + loss['loss_dict']['loss_dice']/dice_weight + loss['loss_dict']['loss_mask']
-            loss['total_loss'].backward()
+            loss.backward()
             
             batch_size = batch["pixel_values"].size(0)
-            running_loss += loss['total_loss'].item()
+            running_loss += loss.item()
             num_samples += batch_size
 
             # Optimization
             optimizer.step()
 
-        if epoch % 10 == 0:
-            print("Train Loss:", torch.round(weightened_loss/num_samples, 3), ', loss_cross_entropy:', torch.round(loss['loss_dict']['loss_cross_entropy'].item(), 3), 
-                                    ', loss_dice:', torch.round(loss['loss_dict']['loss_dice'].item()/5, 3), ', loss_mask:', torch.round(loss['loss_dict']['loss_mask'].item(), 3))
+        if epoch % 5 == 0:
+            print("Train Loss:", torch.round(running_loss/num_samples, 3))
         
         model.eval()
         with torch.no_grad():
@@ -145,18 +143,15 @@ def train(model,
                 )
 
                 loss = outputs.loss
-                weightened_loss = loss['loss_dict']['loss_cross_entropy'] + loss['loss_dict']['loss_dice']/dice_weight + loss['loss_dict']['loss_mask']
-
                 batch_size = batch["pixel_values"].size(0)
-                val_loss += loss['total_loss'].item()
+                val_loss += loss.item()
                 val_samples += batch_size
 
-        if epoch % 10 == 0:
-            print("Validation Loss:", torch.round(weightened_loss/val_samples, 3), ', loss_cross_entropy:', torch.round(loss['loss_dict']['loss_cross_entropy'].item(), 3), 
-                                    ', loss_dice:', torch.round(loss['loss_dict']['loss_dice'].item()/5, 3), ', loss_mask:', torch.round(loss['loss_dict']['loss_mask'].item(), 3))
+        if epoch % 5 == 0:
+            print("Validation Loss:", torch.round(val_loss/val_samples, 3))
 
 
-        if weightened_loss.item() < best_loss:
-            best_loss = weightened_loss.item()
+        if loss.item() < best_loss:
+            best_loss = loss.item()
             best_epoch = epoch
-            model.save_pretrained(f"./checkpoints_faster_maskformer/{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/{best_epoch}_{torch.round(weightened_loss, 3)}")
+            model.save_pretrained(f"./checkpoints_faster_maskformer/{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/{best_epoch}_{torch.round(best_loss, 3)}")
