@@ -23,6 +23,8 @@ with open('config.yaml', 'r') as file:
 ADE_MEAN = np.array([123.675, 116.280, 103.530]) / 255
 ADE_STD = np.array([58.395, 57.120, 57.375]) / 255
 
+dataset_root = config['DATASET_ROOT']
+
 id2label = config['ID2LABEL']
 label2id = config['LABEL2ID']
 
@@ -78,17 +80,17 @@ def coco_to_polygons(annotations, image_folder):
     return dataset
 
 
-with open(r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/train/annotations/train.json") as f:
+with open(dataset_root+"/train/annotations/train.json") as f:
     data = json.load(f)
-    train = coco_to_polygons(data, r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/train/images")
+    train = coco_to_polygons(data, dataset_root+"/train/images")
 
-with open(r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/val/annotations/val.json") as f:
+with open(dataset_root+"/val/annotations/val.json") as f:
     data = json.load(f)
-    val = coco_to_polygons(data, r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/val/images")
+    val = coco_to_polygons(data, dataset_root+"/val/images")
 
-with open(r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/test/annotations/test.json") as f:
+with open(dataset_root+"/test/annotations/test.json") as f:
     data = json.load(f)
-    test = coco_to_polygons(data, r"/home/vladislav/Documents/Studies/CV703/final project/final project/arcade/test/images")
+    test = coco_to_polygons(data, dataset_root+"/test/images")
 
 
 def collate_fn(batch):
