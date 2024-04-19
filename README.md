@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 - Download dataset from URL: https://drive.google.com/file/d/1Y9rWFnUBdAFBoh3Qmav-8rdNd40jg7je/view?usp=sharing
 - Extract files
-- Config config.yaml file with your parameters. Set root to the extracted files in DATASET_ROOT argument
+- Config config.yaml file with your parameters. Set root to the extracted files in `DATASET_ROOT` argument
 - Start the training by running:
 ```
 python3 main.py 
