@@ -1,0 +1,12 @@
+cv2
+PIL
+numpy
+torch
+torchaudio
+torchvision
+timm
+transformers
+albumentations
+pathlib
+dataclasses
+yaml
