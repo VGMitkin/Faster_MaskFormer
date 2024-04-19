@@ -187,7 +187,6 @@ class FasterViT(nn.Module):
             resolution = [resolution, resolution]
 
         num_features = int(dim * 2 ** (len(depths) - 1))
-        print(num_features)
         self.num_classes = num_classes
         self.patch_embed = PatchEmbed(in_chans=in_chans, in_dim=in_dim, dim=dim)
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, sum(depths))]
@@ -195,7 +194,6 @@ class FasterViT(nn.Module):
         if hat is None: hat = [True, ]*len(depths)
         for i in range(len(depths)):
             conv = True if (i == 0 or i == 1) else False
-            print(f"Level {i} dim: {dim*2**i}")
             level = FasterViTLayer(dim=int(dim * 2 ** i),
                                    depth=depths[i],
                                    num_heads=num_heads[i],
