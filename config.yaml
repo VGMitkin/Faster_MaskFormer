@@ -1,9 +1,10 @@
 #############################################
-# CONFIGURATIONS FOR THE TRAINING PROCESS #
+# CONFIGURATIONS FOR THE TRAINING PROCESS   #
 #############################################
 
-OPTIMIZER_CONF: 'single' # 'SINGLE' OR 'MULTI'
-ENCODER_TYPE: 'ours' # 'OURS' OR 'SWIN'
+DATASET_URL: 'https://drive.google.com/file/d/1Y9rWFnUBdAFBoh3Qmav-8rdNd40jg7je/view?usp=sharing'
+OPTIMIZER_CONF: 'single' # 'single' OR 'multi'
+ENCODER_TYPE: 'ours' # 'ours' OR 'swin'
 NUM_EPOCHS: 350
 LR: 1e-3
 WEIGHT_DECAY: 5e-6
