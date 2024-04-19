@@ -13,3 +13,4 @@ pathlib
 dataclasses
 yaml
 json
+tqdm
