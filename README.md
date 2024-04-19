@@ -56,7 +56,7 @@ sh train.sh
 ```
 ## To run the testing
 
-To see test results use file `test.ipynb`
+To see test results use file `test_arcade_syntax.ipynb`
 
 ## Results Example
 
