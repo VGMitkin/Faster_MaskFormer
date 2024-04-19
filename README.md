@@ -49,7 +49,7 @@ python3 main.py
 - or run 
 
 ```
-sh train. sh
+sh train.sh
 ```
 ## To run the testing
 
