@@ -1,1 +1,1 @@
-sh train.py sh
+sh python3 train.py sh
