@@ -5,7 +5,7 @@
 DATASET_ROOT: None
 OPTIMIZER_CONF: 'single' # 'single' OR 'multi'
 ENCODER_TYPE: 'ours' # 'ours' OR 'swin'
-NUM_EPOCHS: 350
+NUM_EPOCHS: 10
 LR: 1e-3
 WEIGHT_DECAY: 5e-6
 DICE_WEIGHT: 5
@@ -19,7 +19,7 @@ ID2LABEL: {0: 'Stenosis'}
 LABEL2ID: {'Stenosis': 0}
 
 IMG_SIZE:  224
-BATCH_SIZE: 40
+BATCH_SIZE: 4
 
 #################################################
 # CONFIGURATIONS FOR THE FASTERVIT ARCHITECTURE #
