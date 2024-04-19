@@ -43,6 +43,7 @@ pip install -r requirements.txt
 ## To run the training
 
 - Download dataset from URL: (https://zenodo.org/records/10390295)
+- Download model weights (https://drive.google.com/file/d/1UUQ0SkOnW5XC9zfg52a0l0tZYsRgEw_x/view?usp=drive_link)
 - Extract files
 - Config config.yaml file with your parameters. Set root to the extracted files in `DATASET_ROOT` argument
 - Start the training by running:
