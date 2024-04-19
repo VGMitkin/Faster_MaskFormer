@@ -6,7 +6,8 @@ torchaudio
 torchvision
 timm
 transformers
-albumentations
+albumentations==1.4.3
 pathlib
 dataclasses
 yaml
+json
