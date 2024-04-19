@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ## To run the training
 
-- Download dataset from URL: https://drive.google.com/file/d/1Y9rWFnUBdAFBoh3Qmav-8rdNd40jg7je/view?usp=sharing
+- Download dataset from URL: (https://zenodo.org/records/10390295)
 - Extract files
 - Config config.yaml file with your parameters. Set root to the extracted files in `DATASET_ROOT` argument
 - Start the training by running:
