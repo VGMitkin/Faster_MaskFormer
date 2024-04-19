@@ -26,7 +26,7 @@ The ARCADE challenge dataset, namely "stenosis," which comprises 1500 annotation
       
 |--- validation/
 |--- test/
-
+```
 
 ## Installation
 
