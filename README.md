@@ -7,7 +7,7 @@ Coronary artery disease (CAD) remains a leading cause of global mortality, neces
 
 
 ## Dataset 
-The ARCADE challenge dataset, namely "stenosis," which comprises 1500 annotations for stenosis detection and instance segmentation, and "syntax," which comprises another 1500 images for individual vessel classification and segmentation with 25 classes, which will also be converted to a more general semantic segmentation task
+The ARCADE challenge dataset, namely "stenosis," which comprises 1500 annotations for stenosis detection and instance segmentation, and "syntax," which comprises another 1500 images for individual vessel classification and segmentation with 25 classes, which will also be converted to more general semantic segmentation task
 ```
 /ARCADE
 |
@@ -35,21 +35,21 @@ cd Faster_MaskFormer
 Create conda enviromnent 
 
 ```
-conda create -n fastermaskformer python=3.8
+conda create -n fastermaskformer python=3.9
 conda activate flash
 pip install -r requirements.txt
 ```
 
 ## To run the training
-- Comfig config.yaml file with your parameters
+- Config config.yaml file with your parameters
 - Start the training by running:
 ```
 python3 main.py 
 ```
-- or simply run 
+- or run 
 
 ```
-sh train.sh
+sh train. sh
 ```
 ## To run the testing
 
@@ -57,7 +57,7 @@ sh train.sh
 ```
 python3 test.py
 ```
-- or simply run 
+- or run 
 
 ```
 sh test.sh
