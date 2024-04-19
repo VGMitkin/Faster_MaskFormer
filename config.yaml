@@ -2,7 +2,7 @@
 # CONFIGURATIONS FOR THE TRAINING PROCESS   #
 #############################################
 
-DATASET_URL: 'https://drive.google.com/file/d/1Y9rWFnUBdAFBoh3Qmav-8rdNd40jg7je/view?usp=sharing'
+DATASET_ROOT: None
 OPTIMIZER_CONF: 'single' # 'single' OR 'multi'
 ENCODER_TYPE: 'ours' # 'ours' OR 'swin'
 NUM_EPOCHS: 350
