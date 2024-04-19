@@ -1,11 +1,12 @@
 cv2
-PIL
+pillow
 numpy
 torch
 torchaudio
 torchvision
 timm
 transformers
+huggingface
 albumentations==1.4.3
 pathlib
 dataclasses
