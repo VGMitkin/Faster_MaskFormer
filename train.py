@@ -44,6 +44,7 @@ def train(model,
     Returns:
         None
     """
+    os.mkdir(f"./{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/")
 
     model.to(device)
 
@@ -154,4 +155,5 @@ def train(model,
         if loss.item() < best_loss:
             best_loss = loss.item()
             best_epoch = epoch
-            model.save_pretrained(f"./checkpoints_faster_maskformer/{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/{best_epoch}_{torch.round(best_loss, 3)}")
+            os.mkdir(f"./{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/{best_epoch}_{torch.round(best_loss, 3)}")
+            torch.save(model.state_dict(), f"./{encoder_type}_encoder_{optimizer_conf}_optimizer_lr_{lr}_decay_{weight_decay}_num_querries_{num_queries}_dice_weight_{dice_weight}_{num_epochs}_epochs/{best_epoch}_{torch.round(best_loss, 3)}")
