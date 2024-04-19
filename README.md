@@ -58,6 +58,12 @@ sh train.sh
 
 To see test results use file `test.ipynb`
 
+## Results Example
+
+![fastformer_syntax_overlayed_true](https://github.com/VGMitkin/Faster_MaskFormer/assets/91109627/acbadc6a-a170-42a4-a5ec-4b8ab97020d2)
+![fastformer_syntax_overlayed_pred](https://github.com/VGMitkin/Faster_MaskFormer/assets/91109627/a85bfa83-5698-4554-b6fa-7c0f3d628198)
+
+                                      Ground Truth                                                                       Prediction
 
 ## Team
 - Maxim Popov
