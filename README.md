@@ -53,16 +53,7 @@ sh train.sh
 ```
 ## To run the testing
 
-- Start the testing by running:
-```
-python3 test.py
-```
-- or run 
-
-```
-sh test.sh
-```
-
+To see test results use file test.ipynb
 
 
 ## Team
